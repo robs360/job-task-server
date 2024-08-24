@@ -5,7 +5,7 @@ app.use(cors())
 const port = process.env.PORT || 5000
 require('dotenv').config()
 app.use(express.json())
-
+console.log("")
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb+srv://job-task:GfaVNRaXEWZeOa8G@cluster0.tju8r4h.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
