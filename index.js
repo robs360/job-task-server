@@ -26,6 +26,19 @@ async function run() {
         const result=await dataCollection.find().toArray()
         res.send(result)
     })
+    app.get('/search', async (req, res) => {
+    
+      let search = '';
+      if (req.query.q) {
+        search = req.query.q
+      }
+     console.log("it is search ",search)
+      const result = await dataCollection.find({
+        category: { $regex: search, $options: 'i' }
+      }).toArray()
+
+      res.send(result)
+    })
   } finally {
     
   }
